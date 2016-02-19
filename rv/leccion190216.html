@@ -38,6 +38,8 @@
     
     function render(){
       requestAnimationFrame( render );
+      cubo.rotation.x += 0.1;
+      cubo.rotation.y +=0.1;
       renderer.render( escena, camara );
     }
     render();
