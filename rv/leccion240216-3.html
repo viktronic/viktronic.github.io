@@ -30,7 +30,7 @@
     </script>
     
     <script>
-    var geometry = new THREE.TorusGeometry( );
+    var geometry = new THREE.TorusGeometry( 10, 10, 100, 100 );
     var material = new THREE.MeshNormalMaterial( );
     var sphere = new THREE.Mesh( geometry, material );
     escena.add( sphere );
