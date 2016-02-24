@@ -32,9 +32,15 @@
     <script>
     var figura = new THREE.Shape();
     figura.moveTo( 10, 10 );
-    figura.lineTo( 10, 40 );
-    figura.lineTo( 40, 40 );
-    figura.lineTo( 10, 10 );
+    figura.lineTo( 20, 20 );
+    figura.lineTo( 30, 10 );
+    figura.lineTo( 25, 30 );
+    figura.lineTo( 35, 40 );
+    figura.lineTo( 23, 40 );
+    figura.lineTo( 20, 50 );
+    figura.lineTo( 17, 40 );
+    figura.lineTo( 5, 40 );
+    figura.lineTo( 15, 30 );
     
     var geometry = new THREE.ShapeGeometry( figura );
     //var material = new THREE.MeshNormalMaterial( );
@@ -43,8 +49,8 @@
     
     function render(){
       requestAnimationFrame( render );
-      malla.rotation.x += 0.1;
-      malla.rotation.y +=0.1;
+      //malla.rotation.x += 0.1;
+      //malla.rotation.y +=0.1;
       renderer.render( escena, camara );
     }
     render();
