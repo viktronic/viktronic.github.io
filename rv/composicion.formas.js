@@ -21,7 +21,7 @@ function setup(){
   escena = new THREE.Scene();
   escena.add( malla );
   
-  camara = new PerspectiveCamera();
+  camara = new THREE.PerspectiveCamera();
   camara.position.z = 10;
   
   renderer = new THREE.WebGLRenderer();
