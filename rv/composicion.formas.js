@@ -12,9 +12,9 @@ function setup(){
   
   var forma = new THREE.Geometry();
   
-  THREE.GeometryUtils.merge( forma, esfera1 );
-  THREE.GeometryUtils.merge( forma, esfera2 );
-  THREE.GeometryUtils.merge( forma, cilindro );
+  Geometry.merge( forma, esfera1 );
+  Geometry.merge( forma, esfera2 );
+  Geometry.merge( forma, cilindro );
   
   malla = new THREE.Mesh( forma );
   
