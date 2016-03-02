@@ -1,7 +1,7 @@
 function setup(){
 
-  var esferaForma = new THREE.SphereGeometry();
-  var cilindroForma = new THREE.CylinderGeometry();
+  var esferaForma = new THREE.SphereGeometry( 1 );
+  var cilindroForma = new THREE.CylinderGeometry( 0.5, 0.5, 4 );
   
   var esfera1 = new THREE.Mesh( esferaForma );
   var esfera2 = new THREE.Mesh( esferaForma );
