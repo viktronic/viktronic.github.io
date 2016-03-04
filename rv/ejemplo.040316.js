@@ -1,4 +1,4 @@
-fucntion Pierna(){
+function Pierna(){
   THREE.Object3D.call(this);
   this.pierna = new THREE.Mesh( new THREE.BoxGeometry(1,5,1));
   this.pie = new THREE.Mesh( new THREE.BoxGeometry(2,1,1));
