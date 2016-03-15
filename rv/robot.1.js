@@ -1,7 +1,7 @@
 function setup(){
   //var cuboForma = new THREE.BoxGeometry(2,2,2);
   var ruedaForma= new THREE.Shape();
-  ruedaForma.moveto( 10, 10 );
+  ruedaForma.moveTo( 10, 10 );
   ruedaForma.lineTo( 12, 10.5 );
   ruedaForma.lineTo( 12, 11.5 );
   ruedaForma.lineTo( 11, 10.5 );
