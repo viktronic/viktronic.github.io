@@ -1,9 +1,11 @@
 function setup(){
-  //var cuboForma = new THREE.BoxGeometry(2,2,2);
+  var cuboForma = new THREE.BoxGeometry(2,2,2);
   var ruedaForma= new THREE.Shape();
   ruedaForma.moveTo( 0, 0 );
   ruedaForma.lineTo( 2, 0.5 );
   ruedaForma.lineTo( 2, 1.5 );
+  
+  var 
   
   var ruedaGeometry = new THREE.ExtrudeGeometry( ruedaForma, {amount: 10});
   ruedaMalla = new THREE.Mesh( ruedaGeometry );
