@@ -7,13 +7,13 @@ function setup(){
   ruedaForma.lineTo( 10, 10 );
   
   var ruedaGeometry = new THREE.ExtrudeGeometry( ruedaForma, {amount: 10});
-  ruedaMalla = new THREE.Mesh( ruedaGeometry, new THREE.MeshBasicMaterial() );
+  ruedaMalla = new THREE.Mesh( ruedaGeometry );
   
   escena = new THREE.Scene();
   escena.add( ruedaMalla );
   
   camara = new THREE.PerspectiveCamera();
-  camara.position.z = 5;
+  camara.position.z = 500;
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerHeight*.95,window.innerHeight*.95);
