@@ -1,10 +1,10 @@
 function setup(){
   //var cuboForma = new THREE.BoxGeometry(2,2,2);
   var ruedaForma= new THREE.Shape();
-  ruedaForma.moveTo( 10, 10 );
-  ruedaForma.lineTo( 12, 10.5 );
-  ruedaForma.lineTo( 12, 11.5 );
-  ruedaForma.lineTo( 10, 10 );
+  ruedaForma.moveTo( 0, 0 );
+  ruedaForma.lineTo( 2, 0.5 );
+  ruedaForma.lineTo( 2, 1.5 );
+  ruedaForma.lineTo( 0, 0 );
   
   var ruedaGeometry = new THREE.ExtrudeGeometry( ruedaForma, {amount: 10});
   ruedaMalla = new THREE.Mesh( ruedaGeometry );
