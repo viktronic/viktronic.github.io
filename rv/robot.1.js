@@ -4,7 +4,7 @@ function setup(){
   ruedaForma.moveTo( 10, 10 );
   ruedaForma.lineTo( 12, 10.5 );
   ruedaForma.lineTo( 12, 11.5 );
-  ruedaForma.lineTo( 11, 10.5 );
+  ruedaForma.lineTo( 10, 10 );
   
   var ruedaGeometry = new THREE.ExtrudeGeometry( ruedaForma, {amount: 10});
   ruedaMalla = new THREE.Mesh( ruedaGeometry, new THREE.MeshBasicMaterial() );
