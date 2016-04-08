@@ -74,6 +74,8 @@ function setup(){
   	luzPuntual.position.x = 50;
   	luzPuntual.position.y = 100;
   	luzPuntual.position.z = 500;
+  	
+  	raycaster1 = new THREE.Raycaster( mallaVisor.position, new THREE.Vector3(-1,0,0));
 
 	escena = new THREE.Scene();
 	escena.add( mallaCaja );
@@ -98,6 +100,9 @@ function setup(){
 
 function loop(){
 	requestAnimationFrame( loop );
+	
+	raycaster1 = new THREE.Raycaster( mallaVisor.position, new THREE.Vector3(-1,0,0));
+	obstaculo1 = raycaster1.intersectObject(cubo1);
 	
 	mallaCaja.position.x += step;
 	mallaCaja.position.y += step;
