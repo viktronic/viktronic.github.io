@@ -39,7 +39,7 @@ function setup(){
 
 	var mallaUnion1 = new THREE.Mesh( union, material );
 	var mallaUnion2 = new THREE.Mesh( union, material );
-	mallaCaja = new THREE.Mesh( caja, material );
+	mallaCaja = new THREE.Mesh( caja, material2 );
 	var mallaTubo = new THREE.Mesh( tubo, material );
 	mallaVisor = new visor();
 
@@ -99,8 +99,8 @@ function setup(){
 function loop(){
 	requestAnimationFrame( loop );
 	
-	//mallaCaja.postion.x += step;
-	//mallaCaja.postion.y += step;
+	mallaCaja.position.x += step;
+	mallaCaja.position.y += step;
 	mallaRobot.position.x += step;
 	mallaRobot.position.y += step;
 	mallaVisor.position.x += step;
@@ -117,7 +117,7 @@ function loop(){
 }
 
 var mallaRobot, camara, escena, renderer;
-var mallaRueda1, mallaRueda2, mallaRueda3, mallaRueda4, mallaVisor,mallaCaja,step;
+var mallaRueda1, mallaRueda2, mallaRueda3, mallaRueda4, mallaVisor, mallaCaja,step;
 
 setup();
 loop();
