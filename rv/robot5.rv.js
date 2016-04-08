@@ -66,7 +66,7 @@ function setup(){
 	THREE.GeometryUtils.merge( robot, mallaUnion2 );
 	//THREE.GeometryUtils.merge( robot, mallaCaja );
 	THREE.GeometryUtils.merge( robot, mallaTubo );
-	THREE.GeometryUtils.merge( robot, mallaVisor );
+	//THREE.GeometryUtils.merge( robot, mallaVisor );
 
 	mallaRobot = new THREE.Mesh( robot , material );
 
