@@ -93,7 +93,7 @@ function setup(){
 	renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
 	document.body.appendChild( renderer.domElement );
 	
-	step= 10;
+	step= 0.1;
 }
 
 function loop(){
