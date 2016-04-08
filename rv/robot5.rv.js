@@ -39,7 +39,7 @@ function setup(){
 
 	var mallaUnion1 = new THREE.Mesh( union, material );
 	var mallaUnion2 = new THREE.Mesh( union, material );
-	var mallaCaja = new THREE.Mesh( caja, material2 );
+	mallaCaja = new THREE.Mesh( caja, material2 );
 	var mallaTubo = new THREE.Mesh( tubo, material );
 	mallaVisor = new visor();
 
@@ -117,7 +117,7 @@ function loop(){
 }
 
 var mallaRobot, camara, escena, renderer;
-var mallaRueda1, mallaRueda2, mallaRueda3, mallaRueda4, mallaVisor,step;
+var mallaRueda1, mallaRueda2, mallaRueda3, mallaRueda4, mallaVisor,mallaCaja,step;
 
 setup();
 loop();
