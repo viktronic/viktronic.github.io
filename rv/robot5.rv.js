@@ -99,8 +99,8 @@ function setup(){
 function loop(){
 	requestAnimationFrame( loop );
 	
-	mallaCaja.postion.x += step;
-	mallaCaja.postion.y += step;
+	//mallaCaja.postion.x += step;
+	//mallaCaja.postion.y += step;
 	mallaRobot.position.x += step;
 	mallaRobot.position.y += step;
 	mallaVisor.position.x += step;
