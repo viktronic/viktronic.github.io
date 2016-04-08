@@ -1,7 +1,5 @@
 function rueda(){
 	THREE.Object3D.call(this);
-	THREE.ImageUtils.crossOrigin = '';
-	this.textura = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
 	this.arcShape = new THREE.Shape();
 				this.arcShape.moveTo( 50, 10 );
 				this.arcShape.absarc( 10, 10, 40, 0, Math.PI*2, false );
@@ -13,7 +11,7 @@ function rueda(){
 	this.extrudeSettings = { amount: 8, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1 };
 
 	this.rueda = new THREE.ExtrudeGeometry( this.arcShape, this.extrudeSettings );
-	this.material = new THREE.MeshPhongMaterial({ map: this.textura});
+	this.material = new THREE.MeshPhongMaterial({ color: 0x000000 });
 	this.mallaRueda = new THREE.Mesh( this.rueda, this.material );
 
 	this.add(this.mallaRueda);
@@ -29,7 +27,10 @@ function visor(){
 visor.prototype = new THREE.Object3D();
 
 function setup(){
+	THREE.ImageUtils.crossOrigin = '';
+	var textura = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
 	var material = new THREE.MeshPhongMaterial({color: 0xff0000 });
+	var material2 = new THREE.MeshPhongMaterial({map: textura });
 
 	var union = new THREE.CylinderGeometry( 10, 10, 150 );
 	var caja = new THREE.BoxGeometry( 200, 30, 130 );
