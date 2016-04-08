@@ -92,16 +92,32 @@ function setup(){
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
 	document.body.appendChild( renderer.domElement );
+	
+	step= 10;
 }
 
 function loop(){
 	requestAnimationFrame( loop );
-
+	
+	mallaCaja.postion.x += step;
+	mallaCaja.postion.y += step;
+	mallaRobot.position.x += step;
+	mallaRobot.position.y += step;
+	mallaVisor.position.x += step;
+	mallaVisor.position.y += step;
+	mallaRueda1.position.x += step;
+	mallaRueda2.position.x += step;
+	mallaRueda3.position.x += step;
+	mallaRueda4.position.x += step;
+	mallaRueda1.position.y += step;
+	mallaRueda2.position.y += step;
+	mallaRueda3.position.y += step;
+	mallaRueda4.position.y += step;
 	renderer.render( escena, camara );
 }
 
 var mallaRobot, camara, escena, renderer;
-var mallaRueda1, mallaRueda2, mallaRueda3, mallaRueda4, mallaVisor;
+var mallaRueda1, mallaRueda2, mallaRueda3, mallaRueda4, mallaVisor,step;
 
 setup();
 loop();
