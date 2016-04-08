@@ -39,7 +39,7 @@ function setup(){
 
 	var mallaUnion1 = new THREE.Mesh( union, material );
 	var mallaUnion2 = new THREE.Mesh( union, material );
-	var mallaCaja = new THREE.Mesh( caja, material );
+	var mallaCaja = new THREE.Mesh( caja, material2 );
 	var mallaTubo = new THREE.Mesh( tubo, material );
 	mallaVisor = new visor();
 
