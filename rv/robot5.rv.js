@@ -39,7 +39,7 @@ function setup(){
 
 	var mallaUnion1 = new THREE.Mesh( union, material );
 	var mallaUnion2 = new THREE.Mesh( union, material );
-	mallaCaja = new THREE.Mesh( caja, material2 );
+	mallaCaja = new THREE.Mesh( caja, material );
 	var mallaTubo = new THREE.Mesh( tubo, material );
 	mallaVisor = new visor();
 
@@ -87,7 +87,7 @@ function setup(){
 	escena.add(luzPuntual);
 
 	camara = new THREE.PerspectiveCamera();
-	camara.position.z = 500;
+	camara.position.z = 1000;
 
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
