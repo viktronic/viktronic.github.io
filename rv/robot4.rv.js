@@ -64,7 +64,7 @@ function setup(){
 
 	THREE.GeometryUtils.merge( robot, mallaUnion1 );
 	THREE.GeometryUtils.merge( robot, mallaUnion2 );
-	THREE.GeometryUtils.merge( robot, mallaCaja );
+	//THREE.GeometryUtils.merge( robot, mallaCaja );
 	THREE.GeometryUtils.merge( robot, mallaTubo );
 	THREE.GeometryUtils.merge( robot, mallaVisor );
 
@@ -76,6 +76,7 @@ function setup(){
   	luzPuntual.position.z = 500;
 
 	escena = new THREE.Scene();
+	escena.add( mallaCaja );
 	escena.add( mallaRobot );
 	escena.add( mallaRueda1 );
 	escena.add( mallaRueda2 );
