@@ -1,17 +1,63 @@
+function completo(){
+	THREE.ImageUtils.crossOrigin = '';
+	this.textura = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
+	var material = new THREE.MeshPhongMaterial({color: 0xff0000 });
+	var material2 = new THREE.MeshPhongMaterial({map: this.textura });
+
+	var union = new THREE.CylinderGeometry( 10, 10, 150 );
+	var caja = new THREE.BoxGeometry( 200, 30, 130 );
+	var tubo = new THREE.CylinderGeometry( 10, 10, 100 );
+	//var visor = new THREE.BoxGeometry( 20, 10, 30 );
+
+	this.mallaUnion1 = new THREE.Mesh( union, material );
+	this.mallaUnion2 = new THREE.Mesh( union, material );
+	this.mallaCaja = new THREE.Mesh( caja, material2 );
+	this.mallaTubo = new THREE.Mesh( tubo, material );
+	this.mallaVisor = new visor();
+	this.mallaRueda1 = new rueda();
+	this.mallaRueda2 = new rueda();
+	this.mallaRueda3 = new rueda();
+	this.mallaRueda4 = new rueda();
+
+	this.mallaRueda1.position.set( 10, 10, 0);
+	this.mallaRueda2.position.set( 160, 10, 0);
+	this.mallaRueda3.position.set( 160, 10, 150);
+	this.mallaRueda4.position.set( 10, 10, 150);
+	this.mallaUnion1.position.set( 10, 10, 75);
+	this.mallaUnion2.position.set( 160, 10, 75);
+	this.mallaUnion2.rotation.x = 3.1416/2;
+	this.mallaUnion1.rotation.x = 3.1416/2;
+	this.mallaCaja.position.set( 85,30,80);
+	this.mallaTubo.position.set( 0,90,80);
+	this.mallaVisor.position.set(0,145,80);
+
+	this.add(this.mallaCaja);
+	this.add(this.mallaTubo);
+	this.add(this.mallaVisor);
+	this.add(this.mallaUnion1);
+	this.add(this.mallaUnion2);
+	this.add(this.mallaRueda1);
+	this.add(this.mallaRueda2);
+	this.add(this.mallaRueda3);
+	this.add(this.mallaRueda4);
+}
+completo.prototype = new THREE.Object3D();
+
 function rueda(){
 	THREE.Object3D.call(this);
 	this.arcShape = new THREE.Shape();
-				this.arcShape.moveTo( 50, 10 );
-				this.arcShape.absarc( 10, 10, 40, 0, Math.PI*2, false );
+				this.arcShape.moveTo( 40, 0 );
+				this.arcShape.absarc( 0, 0, 40, 0, Math.PI*2, false );
 	this.holePath = new THREE.Path();
-				this.holePath.moveTo( 20, 10 );
-				this.holePath.absarc( 10, 10, 10, 0, Math.PI*2, true );
+				this.holePath.moveTo( 10, 0 );
+				this.holePath.absarc( 0, 0, 10, 0, Math.PI*2, true );
 				this.arcShape.holes.push( this.holePath );
+
 
 	this.extrudeSettings = { amount: 8, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1 };
 
 	this.rueda = new THREE.ExtrudeGeometry( this.arcShape, this.extrudeSettings );
-	this.material = new THREE.MeshPhongMaterial({ color: 0x000000 });
+	this.material = new THREE.MeshPhongMaterial({ color: 0x000000});
 	this.mallaRueda = new THREE.Mesh( this.rueda, this.material );
 
 	this.add(this.mallaRueda);
@@ -21,69 +67,21 @@ rueda.prototype = new THREE.Object3D();
 function visor(){
 	THREE.Object3D.call(this);
 	this.malla = new THREE.Mesh( new THREE.BoxGeometry( 20, 10, 30 ), new THREE.MeshPhongMaterial({ color: 0x0000ff }) );
-
+	this.malla.scale.set(2,2,2);
 	this.add(this.malla);
 }
 visor.prototype = new THREE.Object3D();
 
 function setup(){
-	THREE.ImageUtils.crossOrigin = '';
-	var textura = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
-	var material = new THREE.MeshPhongMaterial({color: 0xff0000 });
-	var material2 = new THREE.MeshPhongMaterial({map: textura });
-
-	var union = new THREE.CylinderGeometry( 10, 10, 150 );
-	var caja = new THREE.BoxGeometry( 200, 30, 130 );
-	var tubo = new THREE.CylinderGeometry( 10, 10, 100 );
-	//var visor = new THREE.BoxGeometry( 20, 10, 30 );
-
-	var mallaUnion1 = new THREE.Mesh( union, material );
-	var mallaUnion2 = new THREE.Mesh( union, material );
-	var mallaCaja = new THREE.Mesh( caja, material2 );
-	var mallaTubo = new THREE.Mesh( tubo, material );
-	mallaVisor = new visor();
-
-	mallaRueda1 = new rueda();
-	mallaRueda2 = new rueda();
-	mallaRueda3 = new rueda();
-	mallaRueda4 = new rueda();
-
-	mallaRueda1.position.set( 0, 0, 0);
-	mallaRueda2.position.set( 150, 0, 0);
-	mallaRueda3.position.set( 150, 0, 150);
-	mallaRueda4.position.set( 0, 0, 150);
-	mallaUnion1.position.set( 10, 10, 75);
-	mallaUnion2.position.set( 160, 10, 75);
-	mallaUnion2.rotation.x = 3.1416/2;
-	mallaUnion1.rotation.x = 3.1416/2;
-	mallaCaja.position.set( 85,30,80);
-	mallaTubo.position.set( 0,90,80);
-	mallaVisor.position.set(0,145,80);
-
-	var robot = new THREE.Geometry();
-
-	THREE.GeometryUtils.merge( robot, mallaUnion1 );
-	THREE.GeometryUtils.merge( robot, mallaUnion2 );
-	//THREE.GeometryUtils.merge( robot, mallaCaja );
-	THREE.GeometryUtils.merge( robot, mallaTubo );
-	THREE.GeometryUtils.merge( robot, mallaVisor );
-
-	mallaRobot = new THREE.Mesh( robot , material );
-
+	mallarobot = new completo();
+	step = 0.1;
 	var luzPuntual = new THREE.PointLight( 0xffffff );
   	luzPuntual.position.x = 50;
   	luzPuntual.position.y = 100;
   	luzPuntual.position.z = 500;
 
 	escena = new THREE.Scene();
-	escena.add( mallaCaja );
-	escena.add( mallaRobot );
-	escena.add( mallaRueda1 );
-	escena.add( mallaRueda2 );
-	escena.add( mallaRueda3 );
-	escena.add( mallaRueda4 );
-	escena.add( mallaVisor );
-
+	escena.add(mallarobot);
 	escena.add(luzPuntual);
 
 	camara = new THREE.PerspectiveCamera();
@@ -96,12 +94,17 @@ function setup(){
 
 function loop(){
 	requestAnimationFrame( loop );
-
 	renderer.render( escena, camara );
+	
+	mallarobot.rotation.y += 0.01;
+	mallarobot.mallaRueda1.rotation.z += 0.01;
+	mallarobot.mallaRueda2.rotation.z += 0.01;
+	mallarobot.mallaRueda3.rotation.z += 0.01;
+	mallarobot.mallaRueda4.rotation.z += 0.01;
+	mallarobot.mallaVisor.rotation.y += 0.01;
 }
 
-var mallaRobot, camara, escena, renderer;
-var mallaRueda1, mallaRueda2, mallaRueda3, mallaRueda4, mallaVisor;
+var mallaRobot, camara, escena, renderer, step;
 
 setup();
 loop();
