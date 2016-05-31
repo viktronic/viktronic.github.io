@@ -90,8 +90,8 @@ function setup(){
 	camara.position.z = 500;
 	
 	//5 ancho 8 altura
-camara2 = new THREE.OrthographicCamera( 16 / - 2, 16 / 2, 10 / 2, 10 / - 2, 1, 1000 );
-camara2.position.z=30;
+camara2 = new THREE.OrthographicCamera( -400, 400, 200, -200, 1, 1000 );
+camara2.position.z=500;
 
   escena.add(camara);
   escena.add(camara2);
